@@ -86,6 +86,7 @@ func Write(in chan []byte, eof chan bool) {
 				fmt.Printf("Error saving xls: %v\n", err)
 			}
 			xlsx = nil
+			var err error
 			xlsx, err = excelize.OpenFile("./output.xlsx")
 			if err != nil {
 				fmt.Printf("Error reopening xlsx: %v\n", err)
